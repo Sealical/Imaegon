@@ -224,7 +224,7 @@ root = get_tk()
 # 设置窗口大小
 set_tk_geometry(root, '')
 # 设置窗口title
-set_tk_title(root, 'Picture Editor')
+set_tk_title(root, 'Imaegon')
 # 获取菜单对象
 menubar = get_menu(root)
 # 初始化菜单
