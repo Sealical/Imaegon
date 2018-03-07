@@ -101,7 +101,7 @@ def get_menu(tk):
     return Menu(tk)
 
 
-def menu_file(menubar):
+def menu_file(menubar,root):
     '''定义菜单File'''
     filemenu = Menu(menubar, tearoff=1)
     filemenu.add_command(label=MENU_FILE_ITEMS[0], command=lambda: print(MENU_FILE_ITEMS[0]))
@@ -202,15 +202,15 @@ def meun_help(menubar):
     menubar.add_cascade(label=MENU_ITEMS[-1], menu=help_menu)
 
 
-def about_idel():
+def about_idel(root):
     '''Help-About IDEL function'''
     label = Label(root, text=ABOUT_MESSAGE, fg='red')
     label.pack(side='top')
 
 
-def init_menu_bar(menubar):
+def init_menu_bar(menubar,root):
     '''初始化菜单条'''
-    menu_file(menubar)  # file
+    menu_file(menubar,root)  # file
     menu_edit(menubar)  # edit
     menu_format(menubar)  # format
     menu_run(menubar)  # run
@@ -218,18 +218,20 @@ def init_menu_bar(menubar):
     menu_windows(menubar)  # windows
     meun_help(menubar)  # help
 
-
+'''
 # 获得窗口对象
 root = get_tk()
 # 设置窗口大小
 set_tk_geometry(root, '')
 # 设置窗口title
 set_tk_title(root, 'Picture Editor')
-# 获取菜单对象
-menubar = get_menu(root)
-# 初始化菜单
-init_menu_bar(menubar)
-# 加载菜单配置
-root.config(menu=menubar)
+'''
+def GetMainMenu(root):
+    # 获取菜单对象
+    menubar = get_menu(root)
+    # 初始化菜单
+    init_menu_bar(menubar,root)
+    # 加载菜单配置
+    root.config(menu=menubar)
 
-mainloop()
+#mainloop()
