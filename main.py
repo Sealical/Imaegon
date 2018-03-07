@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter.filedialog import askdirectory,askopenfilename
 from PIL import Image,ImageTk
-
+#just for test
 srt_ = '/Users/test/PycharmProjects/18test_1/test2.jpg'
 
 def selectPath():
